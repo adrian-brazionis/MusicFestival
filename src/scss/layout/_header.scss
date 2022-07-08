@@ -1,0 +1,47 @@
+.header {
+    background-color: $verde;
+
+    .contenido-header {
+        padding: calc($separacion /3) 0;
+
+        @include tab { 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    h1 {
+      color:$white;
+      margin-bottom: 1rem;
+      text-align: center;
+      @include tab {
+          margin-bottom: 0;
+      }
+    }
+
+    &.fix {
+        position: fixed;
+        width: 100%;
+        box-shadow: 0 .3rem .4rem #444;
+    }
+}
+//En SCSS se puede anidar los hijos al padre- VER app.css como queda
+
+.navegacion-header {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+
+    a {
+        color: $white;
+        font-size: 1.5rem;
+
+        &:hover {
+            color: $amarillo;
+        }
+    } //el ampersand hace que se siga el anidamiento y en app.css no se duplique el a y funcione lo solicitado
+}
+//navegacion-header tambien puede ir dentro de header para anidar pero eso generaria selectores muy grandes y dificiles de leer. Conviene que vaya por afuera.
+
+

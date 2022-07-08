@@ -1,0 +1,23 @@
+@mixin tel {
+    @media (min-width: $tel) {
+        @content;       //Esto es para permitir agregar las propiedades a los mixins desde el archivo que estemos utilizando
+    }
+}
+
+@mixin tab {
+    @media (min-width: $tab) {
+        @content;
+    }
+}
+
+@mixin lap {
+    @media (min-width: $lap) {
+        @content;
+    }
+}
+
+@mixin grid ($columns, $space) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $space;
+}
